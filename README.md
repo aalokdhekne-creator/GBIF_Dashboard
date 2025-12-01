@@ -4,3 +4,4 @@
 4) "gbif_cleaned.zip" file contains main data file "gbif_cleaned.csv"
 5) "dataset_2.zip" file contains raw uncleaned bio-diversity data file.
 6) "GBIF_Data_Cleaning.py" is the data cleaning script
+7) "GBIF_EDA.py" script performs basic eda on "gbif_cleaned.csv" file. EDA includes reviewing taxomonic reocrds and distributions  
