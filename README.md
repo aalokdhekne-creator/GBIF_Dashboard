@@ -66,3 +66,105 @@ This pipeline ensures data quality, performance optimization, and meaningful vis
 │   └── Main Streamlit dashboard application
 │
 └── README.md
+
+--
+
+🧪 Methodology
+1️⃣ Data Acquisition
+
+Raw biodiversity occurrence data downloaded from GBIF.
+
+Dataset includes taxonomic hierarchy, geographic coordinates, and event dates.
+
+2️⃣ Data Cleaning & Pre-processing
+
+Script: GBIF_Data_Cleaning.py
+
+Removed irrelevant and empty columns
+
+Standardized text fields
+
+Validated latitude and longitude ranges
+
+Cleaned ISO country codes
+
+Handled missing and inconsistent records
+
+Output: gbif_cleaned.csv
+
+3️⃣ Exploratory Data Analysis (EDA)
+
+Script: GBIF_EDA.py
+Data Used: gbif_cleaned.csv
+
+EDA includes:
+
+Taxonomic distributions (kingdom → species)
+
+Observation frequency analysis
+
+Geographic and country-wise summaries
+
+Preliminary statistical insights
+
+EDA is intentionally performed on CSV format for transparency and inspection.
+
+4️⃣ Data Optimization
+
+Script: convert_data.py
+
+Converted cleaned CSV into Parquet format
+
+Optimized data types for memory efficiency
+
+Prepared dataset for fast dashboard queries
+
+Output: gbif_cleaned.parquet
+
+Why Parquet?
+
+Faster I/O
+
+Lower memory usage
+
+Better performance for interactive dashboards
+
+5️⃣ Dashboard Development
+
+Main file: dashboard.py
+Data source: gbif_cleaned.parquet
+
+Dashboard features:
+
+Interactive filters (country, taxonomy, year)
+
+Taxonomic distribution plots
+
+Geographic maps (cluster map, heatmap, point map)
+
+Temporal trend analysis
+
+Summary metrics:
+
+Total records
+
+Unique species
+
+Genera and families count
+
+▶️ Running the Project Locally
+Install Dependencies
+pip install pandas numpy matplotlib seaborn streamlit pyarrow folium
+
+Optional: Clean Raw Data
+python GBIF_Data_Cleaning.py
+
+Perform EDA
+python GBIF_EDA.py
+
+Convert CSV to Parquet
+python convert_data.py
+
+Launch Dashboard
+streamlit run dashboard.py
+
